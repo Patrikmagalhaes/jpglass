@@ -3,8 +3,6 @@ import {
   useGLTF,
   Center,
   OrbitControls,
-  ContactShadows,
-  Sparkles,
 } from "@react-three/drei";
 import { Suspense } from "react";
 
@@ -25,18 +23,22 @@ function Model({ modelPath }: ModelProps) {
 export default function ModelViewer() {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
-  <Canvas   camera={{ position: [0, 0, 5], fov: 45 }}>
-  <Suspense fallback={null}>
-    
-    <ambientLight intensity={0.5} />
+      <Canvas
+        dpr={[1, 1.5]}
+        frameloop="demand"
+        camera={{ position: [0, 0, 5], fov: 45 }}
+        gl={{
+          antialias: false,
+          powerPreference: "high-performance",
+        }}
+      >
+        <ambientLight intensity={2} />
 
-    <Model modelPath={"/mushroom.glb"} />
-
-    <ContactShadows />
-
-    <Sparkles />
-
-    <OrbitControls
+        <directionalLight
+          position={[5, 5, 5]}
+          intensity={2}
+        />
+<OrbitControls
       enableZoom={false}
       enablePan={false}
       enableDamping
@@ -44,14 +46,12 @@ export default function ModelViewer() {
       minPolarAngle={Math.PI / 2}
       maxPolarAngle={Math.PI / 2}
     />
-
-  </Suspense>
-  <pointLight
-  position={[0, 2, -2]}
-  intensity={8}
-  color="#7c3aed"
-/>
-</Canvas>
+        <Suspense fallback={null}>
+          <Model modelPath="/mushroom.glb" />
+        </Suspense>
+      </Canvas>
     </div>
   );
 }
+
+ 

@@ -25,18 +25,29 @@ const Container = styled.section`
 const Content = styled.div`
   width: 100%;
   max-width: 1400px;
-  display: flex;
-  flex-direction: row;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+
   align-items: center;
-  justify-content: space-between;
+
   padding: 0 5%;
   z-index: 5;
   position: relative;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
+    display: flex;
     flex-direction: column;
-    gap: 4rem;
-    padding: 10% 5%;
+
+    justify-content: space-between;
+
+    padding:
+      2rem
+      1rem
+      2rem;
+
+    height: 100vh;
   }
 `;
 
@@ -49,7 +60,7 @@ const LeftSide = styled.div`
 `;
 
 const GraffitiTitle = styled.h1`
- font-family: ${theme.fonts.hero};
+  font-family: ${theme.fonts.hero};
   font-size: ${theme.fontSizes.title};
   line-height: 0.85;
   color: #7B2EFF;
@@ -57,24 +68,45 @@ const GraffitiTitle = styled.h1`
   display: flex;
   flex-direction: column;
 
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
   @media (max-width: 1024px) {
     font-size: 5rem;
     align-items: center;
     text-align: center;
-  }
 
-  @media (max-width: 768px) {
-    font-size: 3.5rem;
+    .desktop {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+    }
   }
 `;
-
 const CenterSide = styled.div`
-  flex: 1.5;
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
-`;
+
+  @media (max-width: 768px) {
+    flex: 1;
+
+    width: 100%;
+    min-height: 55vh;
+  }
+`;  
 
 // const ProductWrapper = styled.div`
 //   position: relative;
@@ -143,23 +175,26 @@ const SoldLabel = styled.span`
 const Showcase: React.FC = () => {
 
     return (
-        <Container  id="showcase">
-        
-        
+        <Container id="showcase">
+
+
 
             <Content>
                 <LeftSide>
                     <GraffitiTitle>
                         <span>BONG</span>
-                        <span>COGU</span>
-                        <span>MELO</span>
+
+                        <span className="desktop">COGU</span>
+                        <span className="desktop">MELO</span>
+
+                        <span className="mobile">COGUMELO</span>
                     </GraffitiTitle>
                 </LeftSide>
 
                 <CenterSide>
-                  
-                    
-                    <ModelViewer/>
+
+
+                    <ModelViewer />
                 </CenterSide>
 
                 <RightSide>
