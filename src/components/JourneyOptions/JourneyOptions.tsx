@@ -4,10 +4,6 @@ import { ShoppingBag } from 'lucide-react';
 import { motion } from 'motion/react';
 import { theme } from '../../styles/theme';
 
-
-
-
-
 const BackgroundVideo = styled.video`
   position: absolute;
   inset: 0;
@@ -37,8 +33,6 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
-
 
 const COLORS = {
   bg: '#050505',

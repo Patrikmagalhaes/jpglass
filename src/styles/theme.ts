@@ -14,6 +14,10 @@ export const theme = {
     secondary: "'IBM Plex Mono', monospace",
   },
 
+  fontSizes: {
+    title: 'clamp(5rem, 8vw, 9rem)',
+  },
+
   breakpoints: {
     mobile: '768px',
     tablet: '1024px',
