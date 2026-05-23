@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, ChevronRight, Maximize2 } from 'lucide-react';
+import { ChevronRight, Maximize2 } from 'lucide-react';
 
 import idleClosed from '/images/idle-closed.png'
 import idleOpen from '/images/idle-open.png'
@@ -438,15 +438,7 @@ const ActionFooter = styled.div`
   padding-top: 1rem;
 `;
 
-const AutoIndicatorBadge = styled.div`
-  font-family: 'Fira Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-`;
+
 
 const NextPromptButton = styled(motion.div)<{ $glowColor: string }>`
   display: flex;
@@ -584,10 +576,15 @@ function formatAndHighlightText(text: string) {
 
   return <span dangerouslySetInnerHTML={{ __html: formatted }} />;
 }
-
+interface CustomNode extends DialogueNode {
+  options?: {
+    text: string;
+    target: string;
+  }[];
+}
 export default function App() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [customNode, setCustomNode] = useState<any>(null);
+ const [customNode, setCustomNode] = useState<CustomNode | null>(null);
   const [showChoices, setShowChoices] = useState<boolean>(false);
   const [typedText, setTypedText] = useState<string>('');
   const [isTypingCompleted, setIsTypingCompleted] = useState<boolean>(false);
