@@ -45,7 +45,7 @@ const COLORS = {
 
 
 const JourneyContainer = styled.section`
-   width: 100%;
+  width: 100%;
   min-height: 100vh;
   background: #050505;
   display: flex;

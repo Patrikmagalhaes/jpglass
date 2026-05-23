@@ -8,14 +8,17 @@ import ModelViewer from './ModelViewer';
 
 const Container = styled.section`
   width: 100%;
-  min-height: 100vh;
   background-color: #000000;
   position: relative;
   overflow: hidden;
+  height:100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   color: #fff;
+
+  padding: 4rem 0;
 `;
 
 
@@ -23,12 +26,13 @@ const Container = styled.section`
 
 
 const Content = styled.div`
-  width: 100%;
+    width: 100%;
   max-width: 1400px;
-  height: 100vh;
+
+  min-height: 700px;
 
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
 
   align-items: center;
 
@@ -40,14 +44,11 @@ const Content = styled.div`
     display: flex;
     flex-direction: column;
 
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2rem;
 
-    padding:
-      2rem
-      1rem
-      2rem;
-
-    height: 100vh;
+    padding: 2rem 1rem;
+    min-height: auto;
   }
 `;
 
@@ -106,7 +107,7 @@ const CenterSide = styled.div`
     width: 100%;
     min-height: 55vh;
   }
-`;  
+`;
 
 // const ProductWrapper = styled.div`
 //   position: relative;
@@ -127,19 +128,25 @@ const CenterSide = styled.div`
 
 
 const RightSide = styled.div`
-  flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
-  text-align: right;
-  height: stretch;
+
+  height: 100%;
 `;
 
 const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  transform: translateY(40px);
+
+  @media (max-width: 768px) {
+    transform: none;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const SerieTitle = styled.h2`
@@ -174,42 +181,42 @@ const SoldLabel = styled.span`
 
 const Showcase: React.FC = () => {
 
-    return (
-        <Container id="showcase">
+  return (
+    <Container id="showcase">
 
 
 
-            <Content>
-                <LeftSide>
-                    <GraffitiTitle>
-                        <span>BONG</span>
+      <Content>
+        <LeftSide>
+          <GraffitiTitle>
+            <span>BONG</span>
 
-                        <span className="desktop">COGU</span>
-                        <span className="desktop">MELO</span>
+            <span className="desktop">COGU</span>
+            <span className="desktop">MELO</span>
 
-                        <span className="mobile">COGUMELO</span>
-                    </GraffitiTitle>
-                </LeftSide>
+            <span className="mobile">COGUMELO</span>
+          </GraffitiTitle>
+        </LeftSide>
 
-                <CenterSide>
+        <CenterSide>
 
 
-                    <ModelViewer />
-                </CenterSide>
+          <ModelViewer />
+        </CenterSide>
 
-                <RightSide>
-                    <InfoBlock>
-                        <SerieTitle>SÉRIE AUTORAL</SerieTitle>
-                        <SoldLabel>SOLD OUT</SoldLabel>
-                    </InfoBlock>
-                </RightSide>
-            </Content>
+        <RightSide>
+          <InfoBlock>
+            <SerieTitle>SÉRIE AUTORAL</SerieTitle>
+            <SoldLabel>SOLD OUT</SoldLabel>
+          </InfoBlock>
+        </RightSide>
+      </Content>
 
-            <BgText>
-                JP GLASS
-            </BgText>
-        </Container>
-    );
+      <BgText>
+        JP GLASS
+      </BgText>
+    </Container>
+  );
 };
 
 export default Showcase;

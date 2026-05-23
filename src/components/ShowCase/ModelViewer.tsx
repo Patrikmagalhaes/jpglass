@@ -5,24 +5,34 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 import { Suspense } from "react";
+import styled from "styled-components";
 
 type ModelProps = {
   modelPath: string;
 };
+
+const ViewerWrapper = styled.div`
+  width: 100%;
+  height: 650px;
+
+  @media (max-width: 768px) {
+    height: 420px;
+  }
+`;
 
 function Model({ modelPath }: ModelProps) {
   const { scene } = useGLTF(modelPath);
 
   return (
     <Center>
-      <primitive object={scene} scale={1.5} />
+      <primitive object={scene} scale={1.3} />
     </Center>
   );
 }
 
 export default function ModelViewer() {
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
+    <ViewerWrapper style={{ width: "100%" }}>
       <Canvas
         dpr={[1, 1.5]}
         frameloop="demand"
@@ -38,20 +48,19 @@ export default function ModelViewer() {
           position={[5, 5, 5]}
           intensity={2}
         />
-<OrbitControls
-      enableZoom={false}
-      enablePan={false}
-      enableDamping
-      dampingFactor={0.1}
-      minPolarAngle={Math.PI / 2}
-      maxPolarAngle={Math.PI / 2}
-    />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          enableDamping
+          dampingFactor={0.1}
+          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
+        />
         <Suspense fallback={null}>
           <Model modelPath="/mushroom.glb" />
         </Suspense>
       </Canvas>
-    </div>
+    </ViewerWrapper>
   );
 }
 
- 
