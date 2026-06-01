@@ -159,7 +159,7 @@ const Container = styled.section`
 // =========================================
 
 const ParticleContainer = styled.div`
-  position: absolute;
+
   inset: 0;
 
   pointer-events: none;

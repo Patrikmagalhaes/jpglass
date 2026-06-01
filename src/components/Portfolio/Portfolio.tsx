@@ -262,72 +262,85 @@ const CtaFooter = styled.footer`
     margin-top: 35px;
   }
 `;
-
-const CtaButton = styled.a`
-  display: inline-flex;
+export const LeftIcon = styled.span`
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 32px;
-  
-  /* Ultra-modern streetwear block styling */
-  font-family: 'Share Tech Mono', 'Courier New', monospace;
-  font-size: 1.15rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #000000; 
-  background-color: #C6FF1A; /* Neon Green/Yellow Highlighter */
-  border-radius: 0px; /* Strict modern streetwear hard corners */
-  border: 3px solid #C6FF1A;
-  text-decoration: none;
-  letter-spacing: 0.18em;
-  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
-  box-shadow: 
-    6px 6px 0px #8A3DFF, 
-    12px 12px 0px rgba(0, 0, 0, 1);
 
-  &:hover {
-    background-color: #000000;
-    color: #C6FF1A;
-    border-color: #C6FF1A;
-    transform: translate(-4px, -4px);
-    box-shadow: 
-      10px 10px 0px #8A3DFF,
-      20px 20px 0px rgba(0, 0, 0, 1),
-      0px 0px 30px rgba(198, 255, 26, 0.5);
-  }
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 
-  &:active {
-    transform: translate(6px, 6px);
-    box-shadow: 
-      0px 0px 0px #8A3DFF,
-      0px 0px 0px rgba(0, 0, 0, 1);
+  svg {
+    width: 22px;
+    height: 22px;
   }
+`;
+export const RightIcon = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 
   svg {
     width: 22px;
     height: 22px;
     stroke-width: 2.5;
-    transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+`;
+export const ButtonPrimary = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 16px 32px;
+
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.18em;
+
+  color: #000;
+  background-color: #c6ff1a;
+
+  border: 3px solid #c6ff1a;
+  border-radius: 0;
+
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+
+  box-shadow:
+    6px 6px 0px #8a3dff,
+    12px 12px 0px rgba(0, 0, 0, 1);
+
+  &:hover {
+    background-color: #000;
+    color: #c6ff1a;
+    border-color: #c6ff1a;
+
+    transform: translate(-4px, -4px);
+
+    box-shadow:
+      10px 10px 0px #8a3dff,
+      20px 20px 0px rgba(0, 0, 0, 1),
+      0px 0px 30px rgba(198, 255, 26, 0.5);
   }
 
-  
-.instagram-icon {
-  width: 22px;
-  height: 22px;
-  color: #000;
-  transition: 
-    transform 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-    color 0.3s ease;
-}
+  &:hover ${LeftIcon} {
+    transform: rotate(-10deg) scale(1.15);
+  }
 
-&:hover .instagram-icon {
-  color: #C6FF1A;
-  transform: rotate(-10deg) scale(1.15);
-}
-
-  &:hover svg:last-child {
+  &:hover ${RightIcon} {
     transform: translateX(6px) scale(1.1);
-    
+  }
+
+  &:active {
+    transform: translate(6px, 6px);
+
+    box-shadow:
+      0px 0px 0px #8a3dff,
+      0px 0px 0px rgba(0, 0, 0, 1);
   }
 `;
 
@@ -400,15 +413,17 @@ export default function Portfolio() {
         </GalleryRow>
 
         <CtaFooter id="cta-footer">
-          <CtaButton
+          <ButtonPrimary
             href="https://www.instagram.com/jp._.glass/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <LogoInstagram className='instagram-icon ' />
+            <LeftIcon><LogoInstagram /></LeftIcon>
             <ButtonText>@jp._.glass</ButtonText>
-            <ArrowRight size={18} />
-          </CtaButton>
+
+            <RightIcon> <ArrowRight size={18} /></RightIcon>
+           
+          </ButtonPrimary>
         </CtaFooter>
       </GallerySection>
     </AppContainer>
