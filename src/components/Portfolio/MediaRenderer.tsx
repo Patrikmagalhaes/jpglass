@@ -1,3 +1,4 @@
+import styled from "styled-components";
 
 export type MediaItem =
     | {
@@ -18,22 +19,38 @@ type MediaRendererProps = {
     item: MediaItem;
 };
 
+export const GalleryMedia = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  display: block;
+  border-radius: inherit;
+`;
+export const GalleryVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  display: block;
+  border-radius: inherit;
+`;
 export default function MediaRenderer({ item }: MediaRendererProps) {
     if (item.type === 'video') {
         return (
-            <video
-                controls
+            <GalleryVideo
+                autoPlay
+                loop
+                muted
                 playsInline
-                preload="metadata"
-                poster={item.poster}
             >
                 <source src={item.src} type="video/mp4" />
-            </video>
+            </GalleryVideo>
         );
     }
 
     return (
-        <img
+        <GalleryMedia
             src={item.src}
             alt={item.alt}
             referrerPolicy="no-referrer"

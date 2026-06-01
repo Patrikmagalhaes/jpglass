@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { ArrowRight } from 'lucide-react';
 import { theme } from '../../styles/theme';
-import LogoInstagram from '../../assets/logo-instagram.svg?react'
+import LogoInstagram from '../../assets/icons/logo-instagram.svg?react'
 import MediaRenderer, { type MediaItem } from './MediaRenderer';
 
 // Ambient pulsing glows
@@ -207,8 +207,8 @@ const MediaCard = styled.div`
   box-shadow: 
     0 10px 30px rgba(0, 0, 0, 0.9),
     ${props => props.id && parseInt(props.id.split('-')[1]) % 2 === 0
-        ? '0px 0px 15px rgba(95, 0, 255, 0.25)'
-        : '0px 0px 15px rgba(166, 255, 0, 0.22)'};
+    ? '0px 0px 15px rgba(95, 0, 255, 0.25)'
+    : '0px 0px 15px rgba(166, 255, 0, 0.22)'};
 
   @media (min-width: 769px) {
     &:hover {
@@ -217,8 +217,8 @@ const MediaCard = styled.div`
       box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.95),
         ${props => props.id && parseInt(props.id.split('-')[1]) % 2 === 0
-        ? '0px 0px 30px rgba(138, 61, 255, 0.6)'
-        : '0px 0px 30px rgba(182, 255, 0, 0.6)'};
+    ? '0px 0px 30px rgba(138, 61, 255, 0.6)'
+    : '0px 0px 30px rgba(182, 255, 0, 0.6)'};
     }
   }
 
@@ -229,22 +229,6 @@ const MediaCard = styled.div`
     &:active {
       transform: scale(0.97);
     }
-  }
-`;
-
-const CardImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  user-select: none;
-  pointer-events: none;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: brightness(0.9) contrast(1.1);
-
-  ${MediaCard}:hover & {
-    transform: scale(1.05);
-    filter: brightness(1) contrast(1.15);
   }
 `;
 
@@ -354,61 +338,80 @@ const ButtonText = styled.span`
 
 export default function Portfolio() {
 
-const mediaItems: MediaItem[] = [
-  {
-    id: 'artwork-1',
-    type: 'image',
-    src: "../../assets/images/piteiras-1.jpg",
-    alt: 'Escultura de vidro 1',
-  },
-  {
-    id: 'video-1',
-    type: 'video',
-    src: 'https://meusite.com/video.mp4',
-    poster: 'https://meusite.com/thumb.jpg',
-  },
-  {
-    id: 'artwork-2',
-    type: 'image',
-    src: 'https://slowburning.com.br/cdn/shop/files/bongdesilicone.png?v=1706732919&width=1445',
-    alt: 'Escultura de vidro 2',
-  },
-];
+  const mediaItems: MediaItem[] = [
+    {
+      id: 'artwork-1',
+      type: 'image',
+      src: "media/portfolio/images/piteiras-1.jpg",
+      alt: 'Escultura de vidro 1',
+    },
+    {
+      id: 'artwork-2',
+      type: 'image',
+      src: 'media/portfolio/images/piteiras-2.jpg',
+      alt: 'Escultura de vidro 2',
+    },
+    {
+      id: 'artwork-3',
+      type: 'video',
+      src: '/media/portfolio/videos/cuia.mp4',
+    },
+    {
+      id: 'artwork-4',
+      type: 'video',
+      src: '/media/portfolio/videos/piteira-1.mp4',
 
-    return (
-        <AppContainer>
-            {/* Visual Ambient glow gradients to set the underground psychedelic vibe */}
-            <GlowOrbLeft />
-            <GlowOrbRight />
+    },
+    {
+      id: 'artwork-5',
+      type: 'video',
+      src: '/media/portfolio/videos/piteira-2.mp4',
 
-            <GallerySection id="gallery-section">
-                <HeroHeader id="hero-header">
-                    <Title>Galeria</Title>
-                    <Subtitle>Obras Autorais & Esculturas de Vidro</Subtitle>
-                </HeroHeader>
+    },
+    {
+      id: 'artwork-5',
+      type: 'video',
+      src: '/media/portfolio/videos/pote.mp4',
 
-                <GalleryRow id="media-gallery">
-                    {mediaItems.map((art) => (
-                        <MediaCard key={art.id} id={art.id}>
-                        <MediaRenderer item={art} />
-                            <GlassReflectionOverlay />
-                        </MediaCard>
-                    ))}
-                </GalleryRow>
+    },
 
-                  <CtaFooter id="cta-footer"> 
-                      <CtaButton
-                          href="https://www.instagram.com/jp._.glass/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                      >
-                            <LogoInstagram className='instagram-icon '/>
-                          <ButtonText>@jp._.glass</ButtonText>
-                          <ArrowRight size={18} />
-                      </CtaButton>
-                </CtaFooter>
-            </GallerySection>
-        </AppContainer>
-    );
+
+  ];
+
+  return (
+    <AppContainer>
+      {/* Visual Ambient glow gradients to set the underground psychedelic vibe */}
+      <GlowOrbLeft />
+      <GlowOrbRight />
+
+      <GallerySection id="gallery-section">
+        <HeroHeader id="hero-header">
+          <Title>Galeria</Title>
+          <Subtitle>Obras Autorais & Esculturas de Vidro</Subtitle>
+        </HeroHeader>
+
+        <GalleryRow id="media-gallery">
+          {mediaItems.map((art) => (
+            <MediaCard key={art.id} id={art.id}>
+              <MediaRenderer item={art} />
+              <GlassReflectionOverlay />
+            </MediaCard>
+          ))}
+        </GalleryRow>
+
+        <CtaFooter id="cta-footer">
+          <CtaButton
+            href="https://www.instagram.com/jp._.glass/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LogoInstagram className='instagram-icon ' />
+            <ButtonText>@jp._.glass</ButtonText>
+            <ArrowRight size={18} />
+          </CtaButton>
+        </CtaFooter>
+      </GallerySection>
+    </AppContainer>
+  );
 }
 
