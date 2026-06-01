@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import babel from '@rolldown/plugin-babel'
+import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   plugins: [
-    react(), // Sem configurações de babel aqui
+    react(),
+    svgr(),
     babel({
       plugins: [
         [

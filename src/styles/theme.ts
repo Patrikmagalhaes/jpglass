@@ -15,7 +15,7 @@ export const theme = {
   },
 
   fontSizes: {
-    title: 'clamp(5rem, 8vw, 9rem)',
+    title: 'clamp(5rem, 6vw, 7rem)',
   },
 
   breakpoints: {

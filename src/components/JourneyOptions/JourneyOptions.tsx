@@ -1,8 +1,8 @@
 
 import styled from 'styled-components';
-import { ShoppingBag } from 'lucide-react';
 import { motion } from 'motion/react';
 import { theme } from '../../styles/theme';
+import Buttons from '../Hero/components/Buttons';
 
 const BackgroundVideo = styled.video`
   position: absolute;
@@ -101,7 +101,7 @@ interface CardProps {
 
 const Card = styled(motion.div) <CardProps>`
   flex: 1;
-
+opacity: 0;
   border-radius: 12px;
   padding: 2.5rem;
   display: flex;
@@ -121,10 +121,7 @@ const Card = styled(motion.div) <CardProps>`
     box-shadow: inset 0 0 15px rgba(122, 0, 255, 0.1), 0 0 20px rgba(122, 0, 255, 0.2);
   `}
 
-  &:hover {
-    transform: translateY(-10px) ${props => props.isHighlighted ? 'scale(1.06)' : ''};
-    background: rgba(20, 20, 20, 0.8);
-  }
+
 
   @media (max-width: 968px) {
     width: 100%;
@@ -215,7 +212,7 @@ export default function JourneyOptions() {
         </Subtitle>
 
         <CardsGrid id="cards-grid">
-          <Card
+          {/* <Card
             id="card-1"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -275,7 +272,9 @@ export default function JourneyOptions() {
             <Button id="button-3" glowColor={COLORS.neonPurple}>
               Falar com o Artista
             </Button>
-          </Card>
+          </Card> */}
+
+          <Buttons/>
         </CardsGrid>
       </Content>
 
