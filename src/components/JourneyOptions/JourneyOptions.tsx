@@ -108,7 +108,7 @@ export default function JourneyOptions() {
 const y = useTransform(
   scrollYProgress,
   [0, 1],
-  [-100, 100]
+  [-500, 500]
 );
 
   return (

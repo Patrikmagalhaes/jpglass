@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { ShieldCheck, Award, CheckCircle } from 'lucide-react';
 import type { CarouselItem } from '../../types';
 import {
   SectionWrapper,
@@ -12,8 +11,6 @@ import {
   BlueGlowRing,
   ContentOverlay,
   UserLine,
-  BadgesContainer,
-  TrustBadge,
   CardVideo
 } from './Carousel.styles';
 
