@@ -88,6 +88,7 @@ export const HeroContainer = styled.section`
 
 export const Navbar = styled.nav`
   width: 100%;
+  max-width: 1200px;
   padding: 2rem 4rem;
 
   display: flex;
@@ -96,7 +97,7 @@ export const Navbar = styled.nav`
 
   z-index: 100;
 
-  max-width: 1600px;
+
   margin: 0 auto;
 
   @media (max-width: 1024px) {
@@ -372,13 +373,19 @@ export const ImageSection = styled.div`
 `;
 
 export const ProductImage = styled(motion.img)`
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
 
   object-fit: contain;
 
-  position: relative;
   z-index: 5;
+
+
+  pointer-events: none;
+  will-change: transform, opacity, filter;
 `;
 
 export const BgText = styled.div`

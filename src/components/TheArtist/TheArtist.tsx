@@ -154,32 +154,7 @@ const Container = styled.section`
 
 
 
-// =========================================
-// PARTICLES
-// =========================================
 
-const ParticleContainer = styled.div`
-
-  inset: 0;
-
-  pointer-events: none;
-
-  z-index: 2;
-  overflow: hidden;
-`;
-
-const FloatingDust = styled(motion.div)<{ $color: string }>`
-  position: absolute;
-
-  width: 5px;
-  height: 5px;
-
-  background-color: ${(props) => props.$color};
-
-  border-radius: 50%;
-
-  filter: blur(1px);
-`;
 
 
 
@@ -746,19 +721,9 @@ export default function App() {
         return () => clearInterval(timer);
     }, [isTalking]);
 
-    // Particle generator parameters
-    const [floatingParticles, setFloatingParticles] = useState<Array<{ id: number; x: number; y: number; delay: number; speed: number }>>([]);
 
-    useEffect(() => {
-        const pool = Array.from({ length: 18 }).map((_, i) => ({
-            id: i,
-            x: Math.random() * 90 + 5,
-            y: Math.random() * 80 + 10,
-            delay: Math.random() * 5,
-            speed: Math.random() * 15 + 10
-        }));
-        setFloatingParticles(pool);
-    }, []);
+
+
 
     // Set up typewriter effect
     useEffect(() => {
@@ -869,26 +834,6 @@ export default function App() {
     return (
         <Container>
 
-            <ParticleContainer>
-                {floatingParticles.map((particle) => (
-                    <FloatingDust
-                        key={particle.id}
-                        $color={activeStyle.accent}
-                        initial={{ opacity: 0, y: "110vh" }}
-                        animate={{
-                            opacity: [0, 0.45, 0.7, 0.45, 0],
-                            y: ["100vh", "-10vh"],
-                            x: [`${particle.x}%`, `${particle.x + (particle.id % 2 === 0 ? 4 : -4)}%`]
-                        }}
-                        transition={{
-                            duration: particle.speed,
-                            repeat: Infinity,
-                            delay: particle.delay,
-                            ease: "easeInOut"
-                        }}
-                    />
-                ))}
-            </ParticleContainer>
 
             {/* Floating dust and embers to mimic heat of glass furnace */}
 

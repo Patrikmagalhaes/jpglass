@@ -89,7 +89,7 @@ const CardDescription = styled.p`
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.9rem;
   line-height: 1.5;
-  color: #A19EA2;
+  color: #ffffff;
 `;
 
 const ButtonGroup = styled.div`
@@ -149,7 +149,7 @@ const ActionButton = styled(motion.a)<{ isFeatured: boolean }>`
       
             whileHover={{ y: -8, transition: { duration: 0.2 } }}
           >
-            <CardBadge isFeatured={true}>RESERVA LIMITADA</CardBadge>
+            <CardBadge isFeatured={true}>PEÇAS LIMITADAS</CardBadge>
             <NumericTag isFeatured={true}>
               <Flame size={14} /> 01. DROP EXCLUSIVO
             </NumericTag>

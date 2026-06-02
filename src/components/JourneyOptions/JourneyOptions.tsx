@@ -46,7 +46,7 @@ const COLORS = {
 
 const JourneyContainer = styled.section`
   width: 100%;
-  min-height: 100vh;
+  min-height: 120vh;
   background: #050505;
   display: flex;
   flex-direction: column;
@@ -85,7 +85,7 @@ const CardsGrid = styled.div`
   display: flex;
   gap: 1.5rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   z-index: 10;
   align-items: stretch;
 
@@ -108,7 +108,7 @@ export default function JourneyOptions() {
 const y = useTransform(
   scrollYProgress,
   [0, 1],
-  [-500, 500]
+  [-1000, 1000]
 );
 
   return (
@@ -134,67 +134,7 @@ const y = useTransform(
         </Subtitle>
 
         <CardsGrid id="cards-grid">
-          {/* <Card
-            id="card-1"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <CardContent>
-              <CardTopLabel color={COLORS.neonPurple}>01. Peças Prontas</CardTopLabel>
-              <CardMainTitle>O fogo já fez sua parte.</CardMainTitle>
-              <CardText>
-                Seleção de peças exclusivas do drop atual, prontas para envio imediato.
-                Oportunidade única de elevar sua sessão agora.
-              </CardText>
-            </CardContent>
-            <Button id="button-1" glowColor={COLORS.neonPurple}>
-              <span>Ver Peças</span>
-              <ShoppingBag size={16} />
-            </Button>
-          </Card>
-
-          <Card
-            id="card-2"
-            isHighlighted
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <CardContent>
-              <CardTopLabel color={COLORS.neonGreen}>02. Customização</CardTopLabel>
-              <CardMainTitle>Sua identidade, nosso toque.</CardMainTitle>
-              <CardText>
-                Transforme conceitos em realidade. Personalize bases existentes
-                com elementos únicos que definem seu estilo nas ruas.
-              </CardText>
-            </CardContent>
-            <Button id="button-2" glowColor={COLORS.neonGreen} isSolid>
-              Customizar Peça
-            </Button>
-          </Card>
-
-          <Card
-            id="card-3"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <CardContent>
-              <CardTopLabel color={COLORS.neonPurple}>03. Projeto Autoral</CardTopLabel>
-              <CardMainTitle>Tem uma ideia na cabeça?</CardMainTitle>
-              <CardText>
-                Aqui a peça nasce do zero. Você e o artista desenvolvem algo único,
-                moldado pela sua visão e pelo calor do maçarico.
-              </CardText>
-            </CardContent>
-            <Button id="button-3" glowColor={COLORS.neonPurple}>
-              Falar com o Artista
-            </Button>
-          </Card> */}
+          
 
           <Buttons />
         </CardsGrid>
