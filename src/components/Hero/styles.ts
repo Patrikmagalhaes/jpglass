@@ -207,7 +207,7 @@ export const TextSection = styled.div`
 export const Title = styled(motion.h1)`
   font-family: ${theme.fonts.hero};
 
-  font-size: clamp(4rem, 8vw, 9rem);
+  font-size: clamp(4rem, 8vw, 8rem);
 
   line-height: 0.85;
 
@@ -357,50 +357,27 @@ export const SecondaryButton = styled(BaseButton)`
 
 export const ImageSection = styled.div`
   display: flex;
-
   justify-content: center;
   align-items: center;
 
+  width: min(45vw, 600px);
+  height: min(45vw, 600px);
+
   position: relative;
 
-  &::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    border-radius: 50%;
-
-    background: #7f3bed80;
-
-    filter: blur(120px);
-
-    opacity: 0.7;
-
-    z-index: 1;
-  }
-
   @media (max-width: 1024px) {
-    margin-top: 4rem;
-
-    &::before {
-      width: 300px;
-      height: 300px;
-    }
+    width: min(80vw, 450px);
+    height: min(80vw, 450px);
   }
 `;
 
 export const ProductImage = styled(motion.img)`
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
 
-  height: auto;
-
-  max-height: 80vh;
+  object-fit: contain;
 
   position: relative;
-
   z-index: 5;
 `;
 

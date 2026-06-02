@@ -2,13 +2,18 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import Buttons from '../Hero/components/Buttons';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 
-const BackgroundVideo = styled.video`
+const BackgroundVideo = styled(motion.video)`
   position: absolute;
   inset: 0;
+
   width: 100%;
-  height: 100%;
+  height: 120%;
+
   object-fit: cover;
+
   z-index: 0;
  
 `;
@@ -16,11 +21,7 @@ const BackgroundVideo = styled.video`
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 5, 5, 0.7),
-    rgba(5, 5, 5, 0.9)
-  );
+
   z-index: 1;
 `;
 
@@ -94,17 +95,33 @@ const CardsGrid = styled.div`
   }
 `;
 
+
 export default function JourneyOptions() {
+
+
+  const sectionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+const y = useTransform(
+  scrollYProgress,
+  [0, 1],
+  [-100, 100]
+);
+
   return (
-    <JourneyContainer id="hero-section">
+    <JourneyContainer   ref={sectionRef} id="hero-section">
 
       <BackgroundVideo
+        style={{ y }}
         autoPlay
         muted
         loop
         playsInline
       >
-        <source src="/images/cannabis.mp4" type="video/mp4" />
+        <source src="/media/videos/cannabis.mp4" type="video/mp4" />
       </BackgroundVideo>
 
       <Overlay />
@@ -179,7 +196,7 @@ export default function JourneyOptions() {
             </Button>
           </Card> */}
 
-          <Buttons/>
+          <Buttons />
         </CardsGrid>
       </Content>
 
