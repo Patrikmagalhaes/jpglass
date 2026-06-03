@@ -146,7 +146,7 @@ const IconContainer = styled.div<{ $isOpen: boolean }>`
 `;
 
 const QuestionText = styled.h3<{ $isOpen: boolean }>`
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: ${theme.fonts.secondary};
   font-weight: 700;
   font-size: clamp(15px, 2vw, 17px);
   color: ${props => props.$isOpen ? "#ffffff" : "#eddcfb"};
@@ -176,7 +176,7 @@ const AnswerText = styled.div`
   font-size: 14px;
   line-height: 1.6;
   color: #a197ad;
-
+font-family: ${theme.fonts.secondary};
   strong {
     color: #ffffff;
   }

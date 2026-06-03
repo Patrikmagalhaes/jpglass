@@ -1,6 +1,7 @@
 import {  useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Flame, Info, Mail, Sparkles, ExternalLink, ShieldAlert, ArrowRight, CheckCircle2 } from "lucide-react";
+import { theme } from "../../styles/theme";
 
 // Google Fonts Injection inside the Component to guarantee it works out of the box
 const FONT_IMPORT = "https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap";
@@ -34,7 +35,7 @@ const FooterContainer = styled.footer<{ $showSmoke?: boolean; $themeMode?: strin
   position: relative;
   background-color: #000000;
   color: #eeeeee;
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: ${theme.fonts.secondary};
   padding: 80px 24px 30px 24px;
   overflow: hidden;
   border-top: 1px solid rgba(138, 43, 226, 0.15);
@@ -102,7 +103,7 @@ const ArtistBrandColumn = styled.div`
 `;
 
 const LogoTitle = styled.h2`
-  font-family: 'Permanent Marker', cursive;
+  font-family: ${theme.fonts.hero};
   font-size: clamp(32px, 4vw, 42px);
   color: #b6ff00;
   letter-spacing: 2px;
@@ -121,7 +122,7 @@ const LogoTitle = styled.h2`
 `;
 
 const BrandSubtitle = styled.div`
-  font-family: 'Syne', sans-serif;
+  font-family: ${theme.fonts.secondary};
   font-weight: 800;
   font-size: 13px;
   letter-spacing: 4px;
@@ -131,6 +132,7 @@ const BrandSubtitle = styled.div`
 `;
 
 const BrandDescription = styled.p`
+  font-family: ${theme.fonts.secondary};
   font-size: 14px;
   line-height: 1.6;
   color: #9c92a6;
