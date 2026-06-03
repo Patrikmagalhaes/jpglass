@@ -1,4 +1,6 @@
 
+import FAQ from './components/FAQ/Faq';
+import Footer from './components/Footer/Footer';
 import { Hero } from './components/Hero/Hero';
 import JourneyOptions from './components/JourneyOptions/JourneyOptions';
 import Portfolio from './components/Portfolio/Portfolio';
@@ -15,6 +17,8 @@ export default function App() {
       <Showcase />
       <TheArtist />
       <SocialProof />
+      <FAQ/>
+      <Footer/>
 
     </div>
   );

@@ -25,9 +25,9 @@ export function HeroContent() {
         </Title>
 
         <Subtitle {...subtitleAnimation}>
-          DESIGN EM VIDRO DIRETO DO MAÇARICO.
-          GARANTA PEÇAS EXCLUSIVAS DO DROP
-          ATUAL OU ENCOMENDE A SUA DO ZERO.
+          Design em vidro direto do maçarico.
+          garanta peças exclusivas do drop
+          atual ou encomende a sua do zero.
         </Subtitle>
 
         <HeroButtons />

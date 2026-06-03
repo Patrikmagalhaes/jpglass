@@ -261,7 +261,6 @@ export const Subtitle = styled(motion.p)`
 
   letter-spacing: 0.05em;
 
-  text-transform: uppercase;
 
   @media (max-width: 1024px) {
     margin-left: auto;
