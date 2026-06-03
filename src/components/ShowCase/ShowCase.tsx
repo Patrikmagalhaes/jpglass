@@ -45,7 +45,7 @@ const Content = styled.div`
     gap: 2rem;
 
     padding: 2rem 1rem;
-    min-height: auto;
+    height: 100vh;
   }
 `;
 

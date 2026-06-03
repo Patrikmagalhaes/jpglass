@@ -1,6 +1,7 @@
 import { ArrowRight, Flame, Paintbrush, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import styled from "styled-components";
+import { theme } from "../../../styles/theme";
 
 
 const PathwayGrid = styled.div`
@@ -76,7 +77,7 @@ const ContentGroup = styled.div`
 `;
 
 const CardTitle = styled.h3`
-  font-family: 'Syne', sans-serif;
+  font-family: ${theme.fonts.secondary};
   font-size: 1.5rem;
   font-weight: 800;
   color: #FFFFFF;
