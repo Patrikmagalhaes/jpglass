@@ -93,6 +93,7 @@ const CardsGrid = styled.div`
   @media (max-width: 968px) {
     flex-direction: column;
     align-items: center;
+    padding: 0px;
   }
 `;
 
