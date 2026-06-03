@@ -1,10 +1,7 @@
-import {  useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { Flame, Info, Mail, Sparkles, ExternalLink, ShieldAlert, ArrowRight, CheckCircle2 } from "lucide-react";
 import { theme } from "../../styles/theme";
 
-// Google Fonts Injection inside the Component to guarantee it works out of the box
-const FONT_IMPORT = "https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap";
 
 // --- ANIMATIONS ---
 
@@ -105,7 +102,7 @@ const ArtistBrandColumn = styled.div`
 const LogoTitle = styled.h2`
   font-family: ${theme.fonts.hero};
   font-size: clamp(32px, 4vw, 42px);
-  color: #b6ff00;
+  color: #C7FF1A;
   letter-spacing: 2px;
   margin: 0;
   text-transform: uppercase;
@@ -116,7 +113,7 @@ const LogoTitle = styled.h2`
   gap: 12px;
 
   span {
-    color: #ab20fd;
+    color: #7B2EFF;
     text-shadow: 0 0 10px rgba(171, 32, 253, 0.6);
   }
 `;
@@ -126,7 +123,7 @@ const BrandSubtitle = styled.div`
   font-weight: 800;
   font-size: 13px;
   letter-spacing: 4px;
-  color: #ab20fd;
+  color: #7B2EFF;
   text-transform: uppercase;
   margin-top: -10px;
 `;
@@ -153,7 +150,7 @@ const BadgesContainer = styled.div`
 
 const ActionButton = styled.a`
   text-decoration: none;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: ${theme.fonts.secondary};
   font-weight: 700;
   font-size: 12.5px;
   padding: 12px 18px;
@@ -172,11 +169,11 @@ const ActionButton = styled.a`
 
   background: rgba(182, 255, 0, 0.04);
   border: 1px solid rgba(182, 255, 0, 0.25);
-  color: #b6ff00;
+  color: #C7FF1A;
 
   &:hover {
     background: rgba(182, 255, 0, 0.12);
-    border-color: #b6ff00;
+    border-color: #C7FF1A;
     box-shadow: 0 0 15px rgba(182, 255, 0, 0.3);
     transform: translateX(4px);
   }
@@ -189,7 +186,7 @@ const CustomizationButton = styled(ActionButton)`
 
   &:hover {
     background: rgba(171, 32, 253, 0.14);
-    border-color: #ab20fd;
+    border-color: #7B2EFF;
     box-shadow: 0 0 15px rgba(171, 32, 253, 0.35);
     color: #ffffff;
     transform: translateX(4px);
@@ -217,7 +214,7 @@ const FooterColumn = styled.div`
 `;
 
 const ColumnTitle = styled.h3`
-  font-family: 'Syne', sans-serif;
+  font-family: ${theme.fonts.secondary};
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 2px;
@@ -235,7 +232,7 @@ const ColumnTitle = styled.h3`
     left: 0;
     width: 32px;
     height: 2px;
-    background: linear-gradient(90deg, #b6ff00, #ab20fd);
+    background: linear-gradient(90deg, #C7FF1A, #7B2EFF);
   }
 `;
 
@@ -263,7 +260,7 @@ const StyledLink = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: #b6ff00;
+    color: #C7FF1A;
     transform: translateX(3px);
   }
 `;
@@ -278,7 +275,7 @@ const StyledLinkStatic = styled.div`
 `;
 
 const HarmReductionIcon = styled.div`
-  color: #ab20fd;
+  color: #7B2EFF;
   flex-shrink: 0;
   margin-top: 3px;
 `;
@@ -316,9 +313,9 @@ const InstagramCTA = styled.a`
 
   &:hover {
     transform: translateY(-2px);
-    border-color: #b6ff00;
+    border-color: #C7FF1A;
     box-shadow: 0 0 15px rgba(182, 255, 0, 0.25), 0 0 30px rgba(171, 32, 253, 0.1);
-    color: #b6ff00;
+    color: #C7FF1A;
   }
 
   svg {
@@ -358,7 +355,7 @@ const IconShell = styled.div`
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(138, 43, 226, 0.1);
-  color: #ab20fd;
+  color: #7B2EFF;
 `;
 
 // --- Divider Bar ---
@@ -372,7 +369,7 @@ const NeonDividerContainer = styled.div`
 const NeonDivider = styled.div`
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, #ab20fd 0%, #b6ff00 50%, #ab20fd 100%);
+  background: linear-gradient(90deg, #7B2EFF 0%, #C7FF1A 50%, #7B2EFF 100%);
   background-size: 200% auto;
   animation: ${borderPulse} 6s linear infinite;
   box-shadow: 0 0 8px rgba(182, 255, 0, 0.4), 0 0 12px rgba(171, 32, 253, 0.3);
@@ -424,13 +421,13 @@ const CreatorLink = styled.a`
   padding-bottom: 1px;
 
   &:hover {
-    color: #b6ff00;
-    border-bottom-color: #b6ff00;
+    color: #C7FF1A;
+    border-bottom-color: #C7FF1A;
     text-shadow: 0 0 8px rgba(182, 255, 0, 0.5);
   }
 
   span {
-    color: #ab20fd;
+    color: #7B2EFF;
     font-weight: 900;
   }
 `;
@@ -443,17 +440,7 @@ export interface FooterProps {
 }
 
 export default function Footer({ showSmoke = true, themeMode = "green-purple" }: FooterProps) {
-  // Inject Google Fonts dynamically on mount
-  useEffect(() => {
-    const linkId = "jp-glass-fonts";
-    if (!document.getElementById(linkId)) {
-      const link = document.createElement("link");
-      link.id = linkId;
-      link.rel = "stylesheet";
-      link.href = FONT_IMPORT;
-      document.head.appendChild(link);
-    }
-  }, []);
+
 
   return (
     <FooterContainer id="jp-glass-footer" $showSmoke={showSmoke} $themeMode={themeMode}>
@@ -479,7 +466,7 @@ export default function Footer({ showSmoke = true, themeMode = "green-purple" }:
             
             <BadgesContainer>
               <ActionButton href="#portfolio">
-                <Flame size={14} fill="#b6ff00" /> Peças Prontas
+                <Flame size={14} fill="#C7FF1A" /> Peças Prontas
               </ActionButton>
               <CustomizationButton href="#como-adquirir">
                 <Sparkles size={14} /> Customização
@@ -597,7 +584,7 @@ export default function Footer({ showSmoke = true, themeMode = "green-purple" }:
           </CopyrightText>
           
           <CreatorCredit>
-            <span>Feito com fogo por </span>
+            <span>Feito com brisa por </span>
             <CreatorLink href="https://www.instagram.com/patrik.zip" target="_blank" rel="noopener noreferrer">
               patrik<span>.zip</span> <ExternalLink size={11} style={{ marginLeft: "1px" }} />
             </CreatorLink>

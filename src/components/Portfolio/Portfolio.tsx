@@ -39,6 +39,7 @@ const pulseGlowReverse = keyframes`
 
 
 const AppContainer = styled.div`
+ padding:5rem 0px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -50,6 +51,7 @@ const AppContainer = styled.div`
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+  
 `;
 
 // Decorative ambient neon orbs
