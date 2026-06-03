@@ -10,11 +10,12 @@ export default function App() {
   return (
     <div id="app-root">
       <Hero />
-      <JourneyOptions/>
-      <Showcase/>
-      <TheArtist/>
-      <SocialProof/>
-      <Portfolio/>
+      <Portfolio />
+      <JourneyOptions />
+      <Showcase />
+      <TheArtist />
+      <SocialProof />
+
     </div>
   );
 }

@@ -89,9 +89,9 @@ const GallerySection = styled.section`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
-  padding: 80px 24px;
+padding: 0 4rem;
   box-sizing: border-box;
   position: relative;
   z-index: 2;
@@ -117,7 +117,7 @@ const HeroHeader = styled.header`
 
 const Title = styled.h1`
   font-family: ${theme.fonts.hero};
-  font-size:  ${theme.fontSizes.title};
+  font-size: clamp(4rem, 5vw, 6rem);
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: 0.04em;

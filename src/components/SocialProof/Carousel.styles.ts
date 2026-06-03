@@ -1,10 +1,24 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 
 export const flowGlow = keyframes`
-  0% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 100, 250, 0.1); }
-  50% { box-shadow: 0 0 25px rgba(0, 229, 255, 0.6), 0 0 40px rgba(0, 150, 250, 0.3); }
-  100% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), 0 0 20px rgba(0, 100, 250, 0.1); }
+0% {
+  box-shadow:
+    0 0 10px rgba(126, 59, 237, 0.2),
+    0 0 20px rgba(126, 59, 237, 0.1);
+}
+
+50% {
+  box-shadow:
+    0 0 25px rgba(126, 59, 237, 0.6),
+    0 0 40px rgba(126, 59, 237, 0.3);
+}
+
+100% {
+  box-shadow:
+    0 0 10px rgba(126, 59, 237, 0.2),
+    0 0 20px rgba(126, 59, 237, 0.1);
+}
 `;
 
 export const trackShift = keyframes`
@@ -24,7 +38,7 @@ export const SectionWrapper = styled.div`
 
 export const CarouselContainer = styled.div`
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   position: relative;
   overflow: hidden;
   padding: 2rem 0;
@@ -66,7 +80,7 @@ export const Track = styled.div<{ $isPaused: boolean; $speedSeconds: number }>`
   animation-play-state: ${props => props.$isPaused ? 'paused' : 'running'};
 `;
 
-export const CardWrapper = styled.div<{ $isHighlighted?: boolean }>`
+export const CardWrapper = styled.div`
   width: 280px;
   height: 380px;
   position: relative;
@@ -77,17 +91,14 @@ export const CardWrapper = styled.div<{ $isHighlighted?: boolean }>`
   transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   flex-shrink: 0;
 
-  ${props => props.$isHighlighted && css`
-    border: 2px solid #00e5ff;
+
+    border: 2px solid #7E3BED;
     animation: ${flowGlow} 3s infinite ease-in-out;
-  `}
+ 
 
   &:hover {
     transform: translateY(-10px) scale(1.02);
-    border-color: ${props => props.$isHighlighted ? '#00e5ff' : 'rgba(255, 255, 255, 0.25)'};
-    box-shadow: ${props => props.$isHighlighted 
-      ? '0 15px 35px rgba(0, 229, 255, 0.4)' 
-      : '0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05)'};
+
   }
 `;
 
@@ -179,14 +190,14 @@ export const TagChip = styled.div<{ $isBlue?: boolean }>`
   top: 1rem;
   right: 1rem;
   background: ${props => props.$isBlue ? 'rgba(0, 229, 255, 0.25)' : 'rgba(255, 255, 255, 0.07)'};
-  border: 1px solid ${props => props.$isBlue ? '#00e5ff' : 'rgba(255, 255, 255, 0.1)'};
+  border: 1px solid ${props => props.$isBlue ? '#7E3BED' : 'rgba(255, 255, 255, 0.1)'};
   backdrop-filter: blur(8px);
   padding: 0.35rem 0.75rem;
   border-radius: 2rem;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   font-weight: 500;
-  color: ${props => props.$isBlue ? '#00e5ff' : '#e4e4e7'};
+  color: ${props => props.$isBlue ? '#7E3BED' : '#e4e4e7'};
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -244,7 +255,7 @@ export const TrustBadge = styled.div`
   transition: all 0.25s ease;
 
   &:hover {
-    border-color: #00e5ff;
+    border-color: #7E3BED;
     background: rgba(0, 229, 255, 0.08);
     transform: translateY(-1px);
   }

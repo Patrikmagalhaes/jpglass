@@ -61,7 +61,7 @@ const JourneyContainer = styled.section`
 
 const Title = styled.h1`
   font-family: ${theme.fonts.hero};
-  font-size: clamp(5rem, 8vw, 9rem);
+  font-size: clamp(4rem, 5vw, 6rem);
   color: ${theme.colors.primary};
   margin: 0;
   line-height: 1;
@@ -88,6 +88,7 @@ const CardsGrid = styled.div`
   max-width: 1600px;
   z-index: 10;
   align-items: stretch;
+  padding: 0 4rem;
 
   @media (max-width: 968px) {
     flex-direction: column;

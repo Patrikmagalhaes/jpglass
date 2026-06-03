@@ -26,17 +26,14 @@ const Container = styled.section`
 
 
 const Content = styled.div`
-    width: 100%;
-  max-width: 1400px;
-
-  min-height: 700px;
+  width: 100%;
+  max-width: 1600px;
 
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 
   align-items: center;
-
-  padding: 0 5%;
+  padding: 0 4rem;
   z-index: 5;
   position: relative;
 

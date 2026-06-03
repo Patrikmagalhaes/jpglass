@@ -117,7 +117,7 @@ export const HeadBadge = styled.div`
 // graffiti-stylized typography mapping
 export const MainHeadline = styled.h2`
   font-family: ${theme.fonts.hero};
-  font-size: ${theme.fontSizes.title};
+  font-size: clamp(4rem, 5vw, 6rem);
   color: #ffffff;
   line-height: 1.15;
 

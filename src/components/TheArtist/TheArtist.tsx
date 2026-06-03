@@ -164,7 +164,7 @@ const Container = styled.section`
 
 const InterfaceContainer = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
 
   display: grid;
   grid-template-rows: auto 1fr;
@@ -196,8 +196,7 @@ const TitleTxt = styled.h2`
 
   font-family: ${theme.fonts.hero};
 
-  font-size: ${theme.fontSizes.title};
-
+ font-size: clamp(4rem, 5vw, 6rem);
   color: rgba(255, 255, 255, 0.9);
 
   z-index: 30;

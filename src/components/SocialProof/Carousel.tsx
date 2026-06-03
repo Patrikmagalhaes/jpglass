@@ -68,18 +68,11 @@ export default function Carousel({
             <CardWrapper
               id={`carousel-item-${item.id}-${index}`}
               key={`${item.id}-${index}`}
-              $isHighlighted={item.is_highlighted}
               role="img"
               aria-label={item.alt_text}
             >
               <ImageContainer>
 
-
-                {/* <CardImage 
-                  src={item.thumbnail_url} 
-                  alt={item.alt_text} 
-                  referrerPolicy="no-referrer"
-                /> */}
                 <CardVideo autoPlay
                   muted
                   loop controls={false} >
@@ -92,10 +85,7 @@ export default function Carousel({
 
                 <ContentOverlay>
                   <UserLine>
-
-                    <span>@{item.username}</span>
-                    <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-                    <span style={{ color: '#00e5ff', fontSize: '10px' }}>{item.tag_product}</span>
+                    <span style={{ color: '#7E3BED', fontSize: '10px' }}>{item.tag_product}</span>
                   </UserLine>
                 </ContentOverlay>
               </ImageContainer>

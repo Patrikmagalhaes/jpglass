@@ -208,11 +208,10 @@ export const TextSection = styled.div`
 export const Title = styled(motion.h1)`
   font-family: ${theme.fonts.hero};
 
-  font-size: clamp(4rem, 8vw, 8rem);
+  font-size: clamp(4rem, 5vw, 6rem);
 
   line-height: 0.85;
 
-  margin-bottom: 2.5rem;
 
   text-transform: uppercase;
 
