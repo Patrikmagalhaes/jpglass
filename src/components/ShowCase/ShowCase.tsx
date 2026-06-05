@@ -59,7 +59,7 @@ const LeftSide = styled.div`
 
 const GraffitiTitle = styled.h1`
   font-family: ${theme.fonts.hero};
-  font-size: ${theme.fontSizes.title};
+  font-size: clamp(4rem, 5vw, 6rem);
   line-height: 0.85;
   color: #7B2EFF;
   margin: 0;

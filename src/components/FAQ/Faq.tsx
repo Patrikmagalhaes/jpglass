@@ -278,10 +278,10 @@ export default function FAQ() {
                 <HeaderArea>
 
                     <Title>
-                        Suporte & <span>Alquimia</span>
+                        Perguntas <span>Frequentes</span>
                     </Title>
                     <Subtitle>
-                        Esclareça as principais dúvidas sobre as encomendas, processos de sopro, segurança das remessas e o vidro científico.
+                        Esclareça as principais dúvidas sobre encomendas, processos de sopro, segurança das remessas e os acessórios artesanais em vidro borossilicato.
                     </Subtitle>
                 </HeaderArea>
 
