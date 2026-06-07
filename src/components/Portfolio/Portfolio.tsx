@@ -140,7 +140,6 @@ const Subtitle = styled.p`
    font-size: clamp(0.95rem, 1.1vw, 1.2rem);
   color: #D9D9D9;
   letter-spacing: -0.01em;
-  text-transform: uppercase;
   margin: 18px 0 0 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0px 0px 10px rgba(138, 61, 255, 0.4);
   display: inline-block;
@@ -402,7 +401,7 @@ export default function Portfolio() {
       <GallerySection id="gallery-section">
         <HeroHeader id="hero-header">
           <Title>Galeria</Title>
-          <Subtitle>Obras Autorais & Esculturas de Vidro</Subtitle>
+          <Subtitle>Arte funcional criada para quem valoriza autenticidade. </Subtitle>
         </HeroHeader>
 
         <GalleryRow id="media-gallery">
