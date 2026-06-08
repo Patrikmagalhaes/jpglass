@@ -82,12 +82,12 @@ export function HeroButtons() {
       </PrimaryButton> */}
       <ButtonPrimary>
         <LeftIcon><ShoppingBag /></LeftIcon>
-        <span>Peças Disponíveis</span>
+        <span>Ver Peças Disponíveis</span>
         <RightIcon><ArrowRight /></RightIcon>
       </ButtonPrimary>
       <SecondaryButton
       >  <LeftIcon><Hammer size={18} /></LeftIcon>
-        <span>Customizar Peça</span>
+        <span>Customizar uma Peça</span>
         <RightIcon><ArrowRight /></RightIcon>
         
       </SecondaryButton>
