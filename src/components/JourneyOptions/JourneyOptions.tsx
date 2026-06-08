@@ -8,23 +8,22 @@ import { useRef } from 'react';
 const BackgroundVideo = styled(motion.video)`
   position: absolute;
   inset: 0;
-
   width: 100%;
   height: 120%;
-
   object-fit: cover;
-
   z-index: 0;
- 
+  
+  /* Dropa um pouco o contraste e o brilho do vídeo bruto para os neons do layout pularem para fora */
+  filter: brightness(0.7) contrast(1.1);
 `;
-
 const Overlay = styled.div`
   position: absolute;
   inset: 0;
-
   z-index: 1;
-`;
+  pointer-events: none;
 
+  
+`;
 const Content = styled.div`
   position: relative;
   z-index: 10;
@@ -74,11 +73,10 @@ const Subtitle = styled.h2`
   font-size: clamp(0.95rem, 1.1vw, 1.2rem);
   color: ${COLORS.offWhite};
   letter-spacing: 0.05em;
-  margin-top: 1rem;
   font-weight: normal;
   opacity: 0.8;
   margin-bottom: 2rem;
-  text-transform: uppercase;
+  text-align: center;
 `;
 
 const CardsGrid = styled.div`
