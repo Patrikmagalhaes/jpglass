@@ -156,9 +156,9 @@ const ActionButton = styled(motion.a)<{ isFeatured: boolean }>`
             </NumericTag>
             
             <ContentGroup>
-              <CardTitle>PEÇAS PRONTAS</CardTitle>
+              <CardTitle>PRONTO PRA SESSÃO</CardTitle>
               <CardDescription>
-                O vidro já encontrou o fogo por nossa conta. Garanta designs analógicos originais, numerados e refinados, prontos para postagem imediata em qualquer lugar do mundo.
+                Escolha entre as peças disponíveis do drop atual. Obras finalizadas, fotografadas e prontas para envio. 
               </CardDescription>
             </ContentGroup>
             
@@ -183,13 +183,13 @@ const ActionButton = styled(motion.a)<{ isFeatured: boolean }>`
           >
             <CardBadge isFeatured={false}>PERSONALIZÁVEL</CardBadge>
             <NumericTag isFeatured={false}>
-              <Sparkles size={14} /> 02. BASE MOLDÁVEL
+              <Sparkles size={14} /> 02. CUSTOMIZAÇÃO
             </NumericTag>
             
             <ContentGroup>
-              <CardTitle>CUSTOMIZAÇÃO</CardTitle>
+              <CardTitle>DO SEU JEITO</CardTitle>
               <CardDescription>
-                Adicione suas cores, pigmentos opacos ou craquelados a uma de nossas estruturas predefinidas de anéis ou pingentes. Seu estilo assinado de forma viva.
+                Escolha um modelo e personalize cores, técnicas e detalhes para criar uma versão com a sua identidade.
               </CardDescription>
             </ContentGroup>
             
@@ -214,13 +214,13 @@ const ActionButton = styled(motion.a)<{ isFeatured: boolean }>`
           >
             <CardBadge isFeatured={false}>EXCLUSIVIDADE</CardBadge>
             <NumericTag isFeatured={false}>
-              <Paintbrush size={14} /> 03. ESPÍRITO LIVRE
+              <Paintbrush size={14} /> 03. PROJETO AUTORAL
             </NumericTag>
             
             <ContentGroup>
-              <CardTitle>PROJETO AUTORAL</CardTitle>
+              <CardTitle>CRIE DO ZERO</CardTitle>
               <CardDescription>
-                A quebra total de moldes normativos. Compartilhe uma visão, conceito místico ou dimensão de colisão e crie sua obra-prima do absoluto zero direto no calor do maçarico.
+               Tem uma ideia específica? Converse diretamente com o artista e desenvolva uma peça única, criada exclusivamente para você.
               </CardDescription>
             </ContentGroup>
             
