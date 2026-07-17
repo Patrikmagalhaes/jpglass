@@ -688,21 +688,16 @@ function formatAndHighlightText(text: string) {
 
     return <span dangerouslySetInnerHTML={{ __html: formatted }} />;
 }
-interface CustomNode extends DialogueNode {
-    options?: {
-        text: string;
-        target: string;
-    }[];
-}
+
 export default function App() {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const [customNode, setCustomNode] = useState<CustomNode | null>(null);
+   
     const [showChoices, setShowChoices] = useState<boolean>(false);
     const [typedText, setTypedText] = useState<string>('');
     const [isTypingCompleted, setIsTypingCompleted] = useState<boolean>(false);
     const [mouthOpen, setMouthOpen] = useState<boolean>(false);
 
-    const activeDialogue = customNode || DIALOGUES_DATA[currentIndex];
+    const activeDialogue =  DIALOGUES_DATA[currentIndex];
     const activeStyle = EXPRESSION_THEMES[activeDialogue.expression];
     const isTalking = !isTypingCompleted;
     const isLastDialogue = currentIndex === DIALOGUES_DATA.length - 1;
@@ -755,10 +750,6 @@ export default function App() {
         if (!isTypingCompleted) {
             setTypedText(activeDialogue.text);
             setIsTypingCompleted(true);
-            return;
-        }
-
-        if (customNode) {
             return;
         }
 
@@ -832,7 +823,7 @@ export default function App() {
 
                                 {/* Standard final options of the dialogue list */}
                                 <AnimatePresence>
-                                    {isTypingCompleted && isLastDialogue && showChoices && !customNode && (
+                                    {isTypingCompleted && isLastDialogue && showChoices && (
                                         <InteractiveChoiceStack onClick={(e) => e.stopPropagation()}>
                                             <ChoiceButton
                                                 $accentColor={activeStyle.accent}
@@ -873,31 +864,13 @@ export default function App() {
                                     )}
                                 </AnimatePresence>
 
-                                {/* Inline options for custom choices response */}
-                                <AnimatePresence>
-                                    {isTypingCompleted && customNode && customNode.options && (
-                                        <InteractiveChoiceStack onClick={(e) => e.stopPropagation()}>
-                                            {customNode.options.map((option: any, optIdx: number) => (
-                                                <ChoiceButton
-                                                    key={optIdx}
-                                                    $accentColor={activeStyle.accent}
-                                                    initial={{ opacity: 0, y: 10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    exit={{ opacity: 0 }}
-                                                >
-                                                    <span>{option.text}</span>
-                                                    <ChevronRight size={16} style={{ color: activeStyle.accent }} />
-                                                </ChoiceButton>
-                                            ))}
-                                        </InteractiveChoiceStack>
-                                    )}
-                                </AnimatePresence>
+                          
                             </TextContainer>
 
                             <ActionFooter>
                                 <div style={{ flexGrow: 1 }} />
 
-                                {isTypingCompleted && !showChoices && !customNode && (
+                                {isTypingCompleted && !showChoices  && (
                                     <NextPromptButton
                                         $glowColor={activeStyle.glowColor}
                                         animate={{ opacity: [0.6, 1, 0.6] }}
