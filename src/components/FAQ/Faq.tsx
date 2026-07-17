@@ -272,7 +272,7 @@ export default function FAQ() {
     ];
 
     return (
-        <FAQSection id="perguntas-frequentes">
+        <FAQSection id="faq">
             <GridDecor />
             <Container>
                 <HeaderArea>

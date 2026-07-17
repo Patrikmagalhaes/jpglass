@@ -488,12 +488,12 @@ export default function Footer({ showSmoke = true, themeMode = "green-purple" }:
             <ColumnTitle>Navegação</ColumnTitle>
             <LinkList>
               <LinkItem>
-                <StyledLink href="#inicio">
+                <StyledLink href="#home">
                   <ArrowRight size={12} /> Início
                 </StyledLink>
               </LinkItem>
               <LinkItem>
-                <StyledLink href="#como-adquirir">
+                <StyledLink href="#options">
                   <ArrowRight size={12} /> Como Adquirir
                 </StyledLink>
               </LinkItem>
@@ -508,8 +508,8 @@ export default function Footer({ showSmoke = true, themeMode = "green-purple" }:
                 </StyledLink>
               </LinkItem>
               <LinkItem>
-                <StyledLink href="#galeria">
-                  <ArrowRight size={12} /> Galeria de Gotas
+                <StyledLink href="#social">
+                  <ArrowRight size={12} /> Clientes
                 </StyledLink>
               </LinkItem>
             </LinkList>

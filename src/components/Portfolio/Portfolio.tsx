@@ -393,7 +393,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <AppContainer>
+    <AppContainer id="portfolio">
       {/* Visual Ambient glow gradients to set the underground psychedelic vibe */}
       <GlowOrbLeft />
       <GlowOrbRight />

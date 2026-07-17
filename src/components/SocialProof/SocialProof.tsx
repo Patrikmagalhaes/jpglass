@@ -16,7 +16,7 @@ export default function SocialProof() {
   return (
     <>
 
-      <PageContainer id={SOCIAL_PROOF_DATA.id}>
+      <PageContainer id="social">
         <BgText>
           JP GLASS
         </BgText>

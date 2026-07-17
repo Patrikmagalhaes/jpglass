@@ -11,18 +11,24 @@ export function HeroNavbar() {
       <Logo>JP GLASS</Logo>
 
       <NavLinks>
-        <NavLink href="#">Início</NavLink>
+        <NavLink href="#home">Início</NavLink>
 
-        <NavLink href="#">
+        <NavLink href="#options">
           Como Adquirir
         </NavLink>
 
-        <NavLink href="#">
-          Sobre o Artista
+        <NavLink href="#sobre">
+         O Artista
         </NavLink>
 
-        <NavLink href="#">
-          Portfólio de Peças
+        <NavLink href="#portfolio">
+          Portfólio
+        </NavLink>
+          <NavLink href="#social">
+          Clientes
+        </NavLink>
+           <NavLink href="#faq">
+          FAQ
         </NavLink>
       </NavLinks>
     </Navbar>

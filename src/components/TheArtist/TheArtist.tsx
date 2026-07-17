@@ -778,7 +778,7 @@ export default function App() {
     }, [activeDialogue.state, mouthOpen]);
 
     return (
-        <Container>
+        <Container id="sobre">
 
 
             {/* Floating dust and embers to mimic heat of glass furnace */}

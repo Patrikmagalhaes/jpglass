@@ -12,7 +12,7 @@ import { HeroMarquee } from './components/HeroMarquee';
 
 export function Hero() {
   return (
-    <HeroContainer>
+    <HeroContainer id="home">
       <HeroNavbar />
 
       <HeroContent />

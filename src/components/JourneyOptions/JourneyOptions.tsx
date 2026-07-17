@@ -112,7 +112,7 @@ const y = useTransform(
 );
 
   return (
-    <JourneyContainer   ref={sectionRef} id="hero-section">
+    <JourneyContainer   ref={sectionRef} id="options">
 
       <BackgroundVideo
         style={{ y }}
