@@ -15,6 +15,7 @@ import bongOpen from '../../assets/chat/images/bong-open.png'
 import youOpen from "../../assets/chat/images/you-open.png"
 import youClosed from "../../assets/chat/images/you-closed.png"
 import { theme } from '../../styles/theme';
+import { Link } from 'react-router-dom';
 
 const characterStates = {
     idle: {
@@ -375,10 +376,10 @@ const SpeakerName = styled.h2`
   margin: 0;
 `;
 
-const TaglineBadge = styled(motion.div)<{
-  $badgeBg: string;
-  $badgeBorder: string;
-  $accent: string;
+const TaglineBadge = styled(motion.div) <{
+    $badgeBg: string;
+    $badgeBorder: string;
+    $accent: string;
 }>`
   font-family: 'Fira Mono', monospace;
 
@@ -448,8 +449,8 @@ const InteractiveChoiceStack = styled.div`
   margin-top: 1rem;
 `;
 
-const ChoiceButton = styled(motion.button)<{
-  $accentColor: string;
+const ChoiceButton = styled(motion.button) <{
+    $accentColor: string;
 }>`
   width: 100%;
 
@@ -510,8 +511,8 @@ const ActionFooter = styled.div`
   padding-top: 1rem;
 `;
 
-const NextPromptButton = styled(motion.div)<{
-  $glowColor: string;
+const NextPromptButton = styled(motion.div) <{
+    $glowColor: string;
 }>`
   display: flex;
 
@@ -768,61 +769,7 @@ export default function App() {
         }
     };
 
-    const handleRestart = () => {
-        setCustomNode(null);
-        setShowChoices(false);
-        setCurrentIndex(0);
-    };
 
-    const handleChoiceOption = (choiceType: 'ready' | 'custom' | 'contact') => {
-        if (choiceType === 'ready') {
-            setCustomNode({
-                state: 'idle',
-                speaker: 'José Porto',
-                tagline: 'Minhas Peças',
-                expression: 'visionary',
-                text: 'Luminárias de mesa translúcidas, esculturas abstratas de alta fusão e piteiras artesanais. Cada peça é assunção de um design orgânico único.',
-                options: [
-                    { text: '✦ Falar Diretamente Comigo', target: 'contact' },
-                    { text: '✦ Voltar ao Início', target: 'restart' }
-                ]
-            });
-        } else if (choiceType === 'custom') {
-            setCustomNode({
-                state: 'torch',
-                speaker: 'José Porto',
-                tagline: 'Sob Demanda',
-                expression: 'focused',
-                text: 'Quer tirar uma ideia do papel? Selecionamos o estilo, a cor do vidro alemão e moldamos de forma exclusiva para o seu ritual.',
-                options: [
-                    { text: '✦ Chamar no WhatsApp', target: 'whatsapp' },
-                    { text: '✦ Voltar ao Início', target: 'restart' }
-                ]
-            });
-        } else if (choiceType === 'contact') {
-            setCustomNode({
-                state: 'bong',
-                speaker: 'José Porto',
-                tagline: 'Fale Comigo',
-                expression: 'welcome',
-                text: 'Entre de cabeça no mundo do sopro de vidro! Me chame agora mesmo para conversar sobre ideias de bong, luminárias ou presentes.',
-                options: [
-                    { text: '✦ Chamar no WhatsApp', target: 'whatsapp' },
-                    { text: '✦ Rever a História', target: 'restart' }
-                ]
-            });
-        }
-    };
-
-    const handleAction = (target: string) => {
-        if (target === 'ready') handleChoiceOption('ready');
-        else if (target === 'custom') handleChoiceOption('custom');
-        else if (target === 'contact') handleChoiceOption('contact');
-        else if (target === 'restart') handleRestart();
-        else if (target === 'whatsapp') {
-            window.open('https://wa.me/5511999999999', '_blank');
-        }
-    };
 
     // Determine current image matching open / closed mouth based on active dialogue state
     const currentImage = useMemo(() => {
@@ -889,7 +836,6 @@ export default function App() {
                                         <InteractiveChoiceStack onClick={(e) => e.stopPropagation()}>
                                             <ChoiceButton
                                                 $accentColor={activeStyle.accent}
-                                                onClick={() => handleAction('ready')}
                                                 initial={{ opacity: 0, y: 15 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0 }}
@@ -900,25 +846,29 @@ export default function App() {
 
                                             <ChoiceButton
                                                 $accentColor={activeStyle.accent}
-                                                onClick={() => handleAction('custom')}
+
                                                 initial={{ opacity: 0, y: 15 }}
                                                 animate={{ opacity: 1, y: 0 }}
                                                 exit={{ opacity: 0 }}
                                             >
-                                                <span>CRIAR PEÇA CUSTOM</span>
+                                                <Link to={"/agendamento"}> <span>CRIAR PEÇA CUSTOM</span></Link>
                                                 <ChevronRight size={16} style={{ color: activeStyle.accent }} />
                                             </ChoiceButton>
 
-                                            <ChoiceButton
-                                                $accentColor={activeStyle.accent}
-                                                onClick={() => handleAction('contact')}
-                                                initial={{ opacity: 0, y: 15 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0 }}
-                                            >
-                                                <span>FALAR DIRETAMENTE COMIGO</span>
-                                                <ChevronRight size={16} style={{ color: activeStyle.accent }} />
-                                            </ChoiceButton>
+                                            <a href="https://wa.me/559691564908?text=Ol%C3%A1%21%20%F0%9F%91%8B%20Vim%20pelo%20site%20e%20tenho%20interesse%20em%20desenvolver%20um%20projeto%20autoral.%20Tenho%20uma%20ideia%20para%20uma%20pe%C3%A7a%20personalizada%20e%20gostaria%20de%20conversar%20sobre%20o%20design%2C%20materiais%2C%20prazo%20e%20or%C3%A7amento.%20Quando%20puder%2C%20me%20chame.%20Obrigado%21"
+                                                target="_blank"
+                                                rel="noopener noreferrer">
+                                                <ChoiceButton
+                                                    $accentColor={activeStyle.accent}
+
+                                                    initial={{ opacity: 0, y: 15 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    exit={{ opacity: 0 }}
+                                                >
+                                                    <span>FALAR DIRETAMENTE COMIGO</span>
+                                                    <ChevronRight size={16} style={{ color: activeStyle.accent }} />
+                                                </ChoiceButton>
+                                            </a>
                                         </InteractiveChoiceStack>
                                     )}
                                 </AnimatePresence>
@@ -931,7 +881,6 @@ export default function App() {
                                                 <ChoiceButton
                                                     key={optIdx}
                                                     $accentColor={activeStyle.accent}
-                                                    onClick={() => handleAction(option.target)}
                                                     initial={{ opacity: 0, y: 10 }}
                                                     animate={{ opacity: 1, y: 0 }}
                                                     exit={{ opacity: 0 }}

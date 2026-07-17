@@ -1,7 +1,7 @@
 import {
   ShoppingBag,
   Hammer,
-  ArrowRight,
+  ArrowRight
 } from 'lucide-react';
 
 import {
@@ -9,6 +9,7 @@ import {
 } from '../styles';
 import { ButtonPrimary, LeftIcon, RightIcon } from '../../Portfolio/Portfolio';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 
@@ -87,7 +88,8 @@ export function HeroButtons() {
       </ButtonPrimary>
       <SecondaryButton
       >  <LeftIcon><Hammer size={18} /></LeftIcon>
-        <span>Customizar uma Peça</span>
+        
+        <Link to={"/agendamento"}><span>Customizar uma Peça</span></Link>
         <RightIcon><ArrowRight /></RightIcon>
         
       </SecondaryButton>

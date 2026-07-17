@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { Flame, Info, Mail, Sparkles, ExternalLink, ShieldAlert, ArrowRight, CheckCircle2 } from "lucide-react";
 import { theme } from "../../styles/theme";
+import { Link } from "react-router-dom";
 
 
 // --- ANIMATIONS ---
@@ -457,21 +458,26 @@ export default function Footer({ showSmoke = true, themeMode = "green-purple" }:
               </LogoTitle>
               <BrandSubtitle>Sopro de Vidro</BrandSubtitle>
             </div>
-            
+
             <BrandDescription>
-              Trabalho alquímico de <strong>borossilicato</strong> diretamente no maçarico. 
-              Arte nacional, artesanal e funcional que eleva e limpa a sua sessão de forma única. 
+              Trabalho alquímico de <strong>borossilicato</strong> diretamente no maçarico.
+              Arte nacional, artesanal e funcional que eleva e limpa a sua sessão de forma única.
               Pioneirismo no sopro artesanal de alta performance.
             </BrandDescription>
-            
+
             <BadgesContainer>
               <ActionButton href="#portfolio">
                 <Flame size={14} fill="#C7FF1A" /> Peças Prontas
               </ActionButton>
-              <CustomizationButton href="#como-adquirir">
-                <Sparkles size={14} /> Customização
-              </CustomizationButton>
-              <AutoralButton href="https://www.instagram.com/jp.__.glass/" target="_blank" rel="noopener noreferrer">
+              <Link  to={"/agendamento"}>
+
+                <CustomizationButton href="#como-adquirir">
+                  <Sparkles size={14} /> Customização
+                </CustomizationButton>
+              </Link>
+              <AutoralButton href="https://wa.me/559691564908?text=Ol%C3%A1%21%20%F0%9F%91%8B%20Vim%20pelo%20site%20e%20tenho%20interesse%20em%20desenvolver%20um%20projeto%20autoral.%20Tenho%20uma%20ideia%20para%20uma%20pe%C3%A7a%20personalizada%20e%20gostaria%20de%20conversar%20sobre%20o%20design%2C%20materiais%2C%20prazo%20e%20or%C3%A7amento.%20Quando%20puder%2C%20me%20chame.%20Obrigado%21"
+                target="_blank"
+                rel="noopener noreferrer">
                 <ExternalLink size={14} /> Projeto Autoral
               </AutoralButton>
             </BadgesContainer>
@@ -547,25 +553,25 @@ export default function Footer({ showSmoke = true, themeMode = "green-purple" }:
               <ActionText>
                 Solicite uma peça customizada ou faça parte no próximo Drop clicando abaixo:
               </ActionText>
-              
+
               <InstagramCTA href="https://www.instagram.com/jp.__.glass/" target="_blank" rel="noopener noreferrer">
-                
+
                 <span>Seguir @JP.__.GLASS</span>
                 <ExternalLink size={12} />
               </InstagramCTA>
-              
+
               <ContactInfoList>
                 <ContactItem>
                   <IconShell>
                     <Flame size={14} />
                   </IconShell>
-                  <div>Atelier: <span>São Paulo - SP</span></div>
+                  <div>Atelier: <span>Pato Branco - PR</span></div>
                 </ContactItem>
                 <ContactItem>
                   <IconShell>
                     <Mail size={14} />
                   </IconShell>
-                  <div>E-mail: <span>contato@jpglass.com</span></div>
+                  <div>E-mail: <span>jpglass.26@gmail.com</span></div>
                 </ContactItem>
               </ContactInfoList>
             </CTAContainer>
@@ -582,7 +588,7 @@ export default function Footer({ showSmoke = true, themeMode = "green-purple" }:
           <CopyrightText>
             © {new Date().getFullYear()} <span>JP Glass</span>. Todos os direitos reservados. Arte em Borossilicato de alta resistência.
           </CopyrightText>
-          
+
           <CreatorCredit>
             <span>Feito com brisa por </span>
             <CreatorLink href="https://www.instagram.com/patrik.zip" target="_blank" rel="noopener noreferrer">

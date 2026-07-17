@@ -2,6 +2,7 @@ import { ArrowRight, Flame, Paintbrush, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import styled from "styled-components";
 import { theme } from "../../../styles/theme";
+import { Link } from "react-router-dom";
 
 
 const PathwayGrid = styled.div`
@@ -451,7 +452,7 @@ export default function Buttons() {
         </ContentGroup>
 
         <ButtonGroup>
-          <ActionButton
+          <Link to={"/agendamento"}>  <ActionButton
             variant="purple"
             href="https://wa.me/5599999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20customização%20na%20base%20da%20Nébula%20Glass."
             target="_blank"
@@ -459,7 +460,7 @@ export default function Buttons() {
             whileTap={{ scale: 0.98 }}
           >
             CUSTOMIZAR AGORA <ArrowRight size={16} />
-          </ActionButton>
+          </ActionButton></Link>
         </ButtonGroup>
       </PathwayCard>
 
@@ -484,9 +485,10 @@ export default function Buttons() {
         <ButtonGroup>
           <ActionButton
             variant="hybrid"
-            href="https://wa.me/5599999999999?text=Olá!%20Tenho%20uma%20ideia%20para%20criar%20um%20projeto%20autoral%20do%20zero!"
+            href="https://wa.me/559691564908?text=Ol%C3%A1%21%20%F0%9F%91%8B%20Vim%20pelo%20site%20e%20tenho%20interesse%20em%20desenvolver%20um%20projeto%20autoral.%20Tenho%20uma%20ideia%20para%20uma%20pe%C3%A7a%20personalizada%20e%20gostaria%20de%20conversar%20sobre%20o%20design%2C%20materiais%2C%20prazo%20e%20or%C3%A7amento.%20Quando%20puder%2C%20me%20chame.%20Obrigado%21"
             target="_blank"
             rel="noopener noreferrer"
+
             whileTap={{ scale: 0.98 }}
           >
             CRIAR DO ZERO <ArrowRight size={16} />
