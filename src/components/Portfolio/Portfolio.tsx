@@ -368,7 +368,7 @@ export default function Portfolio() {
     {
       id: 'artwork-3',
       type: 'video',
-      src: '/media/portfolio/videos/cuia.mp4',
+      src: '/media/portfolio/videos/produto.mp4',
     },
     {
       id: 'artwork-4',

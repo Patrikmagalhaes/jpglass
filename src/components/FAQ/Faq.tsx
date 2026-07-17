@@ -213,7 +213,7 @@ export default function FAQ() {
                 <span>
                     Aceitamos pagamentos via <strong>Pix (com 5% de desconto automático)</strong> e parcelamento em até
                     <strong> 12x no cartão de crédito</strong> através do Mercado Pago. Para encomendas autorais personalizadas (Custom Drops),
-                    trabalhamos com o modelo de 50% de sinal no início do projeto e 50% após a conclusão da peça (comprovada por vídeos detalhados de fluxo de ar).
+                    trabalhamos com o modelo de 50% de sinal no início do projeto e 50% após a conclusão da peça.
                 </span>
             )
         },

@@ -1,25 +1,15 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import FAQ from './components/FAQ/Faq';
-import Footer from './components/Footer/Footer';
-import { Hero } from './components/Hero/Hero';
-import JourneyOptions from './components/JourneyOptions/JourneyOptions';
-import Portfolio from './components/Portfolio/Portfolio';
-import Showcase from './components/ShowCase/ShowCase';
-import SocialProof from './components/SocialProof/SocialProof';
-import TheArtist from './components/TheArtist/TheArtist';
+import Home from "./pages/Home";
+import FormPage from "./pages/FormPage";
 
 export default function App() {
   return (
-    <div id="app-root">
-      <Hero />
-      <Portfolio />
-      <JourneyOptions />
-      <Showcase />
-      <TheArtist />
-      <SocialProof />
-      <FAQ/>
-      <Footer/>
-
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/agendamento" element={<FormPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
