@@ -1,4 +1,3 @@
-
 import Carousel from './Carousel';
 import { SOCIAL_PROOF_DATA } from '../../data';
 import {
@@ -10,12 +9,13 @@ import {
 import { BgText, BgTextMobile } from '../Hero/styles';
 
 export default function SocialProof() {
-  const { autoplay, pause_on_hover, pause_on_touch } = SOCIAL_PROOF_DATA.component.behavior;
+  const { autoplay, pause_on_hover, pause_on_touch } =
+    SOCIAL_PROOF_DATA.component.behavior;
+
   const items = SOCIAL_PROOF_DATA.component.items;
 
   return (
     <>
-
       <PageContainer id="social">
         <BgText>
           JP GLASS
@@ -28,19 +28,17 @@ export default function SocialProof() {
           <br />
           SS
         </BgTextMobile>
-        <ShowcaseSection id="app-hero">
-    
 
+        <ShowcaseSection id="app-hero">
           <MainHeadline>
-            Nas mãos de quem entende...
+            {SOCIAL_PROOF_DATA.content.title}
           </MainHeadline>
 
           <EditorialSubtext>
-            Registros de quem escolheu a pureza do vidro para a sua sessão.
+            {SOCIAL_PROOF_DATA.content.subtitle}
           </EditorialSubtext>
         </ShowcaseSection>
 
-        {/* Dynamic carousel rendering the items list */}
         <Carousel
           items={items}
           autoplay={autoplay}

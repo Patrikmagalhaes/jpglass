@@ -1,18 +1,23 @@
-import type { SocialProofSectionConfig } from './types';
+import type { SocialProofSectionConfig } from "./types";
 
 export const SOCIAL_PROOF_DATA: SocialProofSectionConfig = {
   id: "social-proof-ritual",
   theme: "dark",
+
   typography: {
     title_font: "graffiti-stylized",
     body_font: "monospace-clean"
   },
+
   content: {
     title: "Nas mãos de quem entende...",
-    subtitle: "Registros de quem escolheu a pureza do vidro para o seu ritual com ervas e tabacos selecionados."
+    subtitle:
+      "Registros de quem escolheu a pureza do vidro para a sua sessão."
   },
+
   component: {
     type: "carousel",
+
     behavior: {
       autoplay: true,
       loop: true,
@@ -21,55 +26,31 @@ export const SOCIAL_PROOF_DATA: SocialProofSectionConfig = {
       pause_on_hover: true,
       pause_on_touch: true
     },
+
     items: [
       {
         id: 1,
-        username: "fidesindeum1",
-        tag_product: "@jp._glass",
-        media_type: "video",
-        video_url: "/images/cannabis.mp4",
-        thumbnail_url: "/images/you-open.png",
-        alt_text: "Mão segurando um cachimbo de vidro em formato de cogumelo colorido com fumaça ao fundo."
+        video_url: "media/social/videos/prova1.webm",
+        alt_text: "Vídeo 1"
       },
       {
         id: 2,
-        username: "fidesindeum1",
-        tag_product: "@jp._glass",
-        media_type: "video",
-        video_url: "/images/cannabis.mp4",
-        thumbnail_url: "/images/you-open.png",
-        alt_text: "Mão segurando um baseado com piteira de vidro exalando fumaça branca."
+        video_url: "media/social/videos/prova2.webm",
+        alt_text: "Vídeo 2"
       },
       {
         id: 3,
-        username: "fidesindeum1",
-        tag_product: "@jp._glass",
-        media_type: "video",
-        video_url: "/images/cannabis.mp4",
-        thumbnail_url: "/images/you-open.png",
-        alt_text: "Close-up detalhado do cachimbo de vidro artesanal de cogumelo."
+        video_url: "media/social/videos/prova3.webm",
+        alt_text: "Vídeo 3"
       },
       {
         id: 4,
-        username: "fidesindeum1",
-        tag_product: "@jp._glass",
-        media_type: "video",
-        video_url: "/images/cannabis.mp4",
-        thumbnail_url: "/images/you-open.png",
-        alt_text: "Outro ângulo do cachimbo de vidro focado na fumaça densa circundando a peça."
-      },
-      {
-        id: 5,
-        username: "fidesindeum1",
-        tag_product: "@jp._glass",
-        media_type: "video",
-        video_url: "/images/cannabis.mp4",
-        thumbnail_url: "/images/you-open.png",
-        is_highlighted: true,
-        alt_text: "Cena destacada em azul mostrando o uso da piteira de vidro com fumaça densa."
+        video_url: "media/social/videos/prova4.webm",
+        alt_text: "Vídeo 4"
       }
     ]
   },
+
   branding: {
     watermark_logo: "JP GLASS"
   }

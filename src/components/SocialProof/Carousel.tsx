@@ -6,11 +6,6 @@ import {
   Track,
   CardWrapper,
   ImageContainer,
-  GlassGleam,
-  DarkOverlay,
-  BlueGlowRing,
-  ContentOverlay,
-  UserLine,
   CardVideo
 } from './Carousel.styles';
 
@@ -30,7 +25,6 @@ export default function Carousel({
   const [isPaused, setIsPaused] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
 
-  // For infinite carousel, duplicate the items so there is a smooth wrapping effect
   const doubleItems = [...items, ...items, ...items];
 
   const handleMouseEnter = () => {
@@ -72,29 +66,20 @@ export default function Carousel({
               aria-label={item.alt_text}
             >
               <ImageContainer>
-
-                <CardVideo autoPlay
+                <CardVideo
+                  autoPlay
                   muted
-                  loop controls={false} >
-                  <source src={item.video_url} type='video/mp4' />
+                  loop
+                  playsInline
+                  controls={false}
+                >
+                  <source src={item.video_url} type="video/mp4" />
                 </CardVideo>
-
-                <GlassGleam />
-                <DarkOverlay />
-                <BlueGlowRing />
-
-                <ContentOverlay>
-                  <UserLine>
-                    <span style={{ color: '#7E3BED', fontSize: '10px' }}>{item.tag_product}</span>
-                  </UserLine>
-                </ContentOverlay>
               </ImageContainer>
             </CardWrapper>
           ))}
         </Track>
       </CarouselContainer>
-
-  
     </SectionWrapper>
   );
 }

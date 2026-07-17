@@ -1,14 +1,8 @@
 export interface CarouselItem {
   id: number;
-  username: string;
-  tag_product: string;
-  media_type: 'video' | 'image';
   video_url: string;
-  thumbnail_url: string;
   alt_text: string;
-  is_highlighted?: boolean;
 }
-
 export interface SocialProofSectionConfig {
   id: string;
   theme: 'dark' | 'light';
